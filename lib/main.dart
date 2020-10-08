@@ -54,6 +54,7 @@ class _KeyBoardPageState extends State<KeyBoardPage> {
             buildKey(5, Colors.green),
             buildKey(6, Colors.teal),
             buildKey(7, Colors.indigo),
+            buildKey(7, Colors.indigo),
           ],
         ),
       ),
