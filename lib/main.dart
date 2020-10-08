@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Keyboard App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: KeyBoardPage(),
@@ -27,6 +28,19 @@ class KeyBoardPage extends StatefulWidget {
 
 class _KeyBoardPageState extends State<KeyBoardPage> {
   final player = AudioCache();
+
+  //function that builds a key
+  Widget buildKey(int noteNumber, Color color) {
+    return Expanded(
+      child: InkWell(
+        onTap: () => player.play('note$noteNumber.wav'),
+        child: Container(
+          color: color,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
