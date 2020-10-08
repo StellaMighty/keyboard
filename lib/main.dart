@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audio_cache.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: KeyBoardPage(),
@@ -25,8 +25,71 @@ class KeyBoardPage extends StatefulWidget {
 }
 
 class _KeyBoardPageState extends State<KeyBoardPage> {
+  final player = AudioCache();
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SafeArea(
+      child: Scaffold(
+          body: Column(
+        children: [
+          Expanded(
+            child: InkWell(
+              onTap: () => player.play('note1.wav'),
+              child: Container(
+                color: Colors.red,
+              ),
+            ),
+          ),
+          Expanded(
+            child: InkWell(
+              onTap: () => player.play('note2.wav'),
+              child: Container(
+                color: Colors.grey,
+              ),
+            ),
+          ),
+          Expanded(
+            child: InkWell(
+              onTap: () => player.play('note3.wav'),
+              child: Container(
+                color: Colors.amberAccent,
+              ),
+            ),
+          ),
+          Expanded(
+            child: InkWell(
+              onTap: () => player.play('note4.wav'),
+              child: Container(
+                color: Colors.blue,
+              ),
+            ),
+          ),
+          Expanded(
+            child: InkWell(
+              onTap: () => player.play('note5.wav'),
+              child: Container(
+                color: Colors.orange,
+              ),
+            ),
+          ),
+          Expanded(
+            child: InkWell(
+              onTap: () => player.play('note6.wav'),
+              child: Container(
+                color: Colors.white30,
+              ),
+            ),
+          ),
+          Expanded(
+            child: InkWell(
+              onTap: () => player.play('note7.wav'),
+              child: Container(
+                color: Colors.purple,
+              ),
+            ),
+          ),
+        ],
+      )),
+    );
   }
 }
