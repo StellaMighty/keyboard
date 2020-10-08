@@ -31,66 +31,19 @@ class _KeyBoardPageState extends State<KeyBoardPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          body: Column(
-        children: [
-          Expanded(
-            child: InkWell(
-              onTap: () => player.play('note1.wav'),
-              child: Container(
-                color: Colors.red,
-              ),
-            ),
-          ),
-          Expanded(
-            child: InkWell(
-              onTap: () => player.play('note2.wav'),
-              child: Container(
-                color: Colors.grey,
-              ),
-            ),
-          ),
-          Expanded(
-            child: InkWell(
-              onTap: () => player.play('note3.wav'),
-              child: Container(
-                color: Colors.amberAccent,
-              ),
-            ),
-          ),
-          Expanded(
-            child: InkWell(
-              onTap: () => player.play('note4.wav'),
-              child: Container(
-                color: Colors.blue,
-              ),
-            ),
-          ),
-          Expanded(
-            child: InkWell(
-              onTap: () => player.play('note5.wav'),
-              child: Container(
-                color: Colors.orange,
-              ),
-            ),
-          ),
-          Expanded(
-            child: InkWell(
-              onTap: () => player.play('note6.wav'),
-              child: Container(
-                color: Colors.white30,
-              ),
-            ),
-          ),
-          Expanded(
-            child: InkWell(
-              onTap: () => player.play('note7.wav'),
-              child: Container(
-                color: Colors.purple,
-              ),
-            ),
-          ),
-        ],
-      )),
+        body: Column(
+          children: [
+            buildKey(1, Colors.red),
+            buildKey(2, Colors.pink),
+            buildKey(3, Colors.purple),
+            buildKey(4, Colors.blue),
+            buildKey(5, Colors.green),
+            buildKey(6, Colors.teal),
+            buildKey(7, Colors.indigo),
+            buildKey(7, Colors.indigo),
+          ],
+        ),
+      ),
     );
   }
 }
